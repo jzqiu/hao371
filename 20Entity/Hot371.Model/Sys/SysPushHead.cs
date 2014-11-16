@@ -1,81 +1,65 @@
 ﻿/**  版本信息模板在安装目录下，可自行修改。
-* SysAdvertising.cs
+* SysPushHead.cs
 *
 * 功 能： N/A
-* 类 名： SysAdvertising
+* 类 名： SysPushHead
 *
 * Ver    变更日期             负责人  变更内容
 * ───────────────────────────────────
-* V0.01  2014/11/15 23:11:33   N/A    初版
+* V0.01  2014/11/15 23:11:35   N/A    初版
 *
 * Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
 *┌──────────────────────────────────┐
 *│　此技术信息为本公司机密信息，未经本公司书面同意禁止向第三方披露．　│
-*│　版权所有：动软卓越（北京）科技有限公司　　　　　　　　　　　　　　│
+*│　版权所有：三缺一　　　　　　　　　　　　　　│
 *└──────────────────────────────────┘
 */
 using System;
 namespace Hot371.Model
 {
 	/// <summary>
-	/// SysAdvertising:实体类(属性说明自动提取数据库字段的描述信息)
+	/// SysPushHead:实体类(属性说明自动提取数据库字段的描述信息)
 	/// </summary>
 	[Serializable]
-	public partial class SysAdvertising
+	public partial class SysPushHead
 	{
 		#region Model
 		/// <summary>
-		/// PK 自增
+		/// 
 		/// </summary>
-		public int AId
+		public int HId
 		{
 			set;
 			get;
 		}
 		/// <summary>
-		/// 标题
+		/// 职位
 		/// </summary>
-		public string Title
+		public int? PId
 		{
 			set;
 			get;
 		}
 		/// <summary>
-		/// 图片
+		/// 创建时间
 		/// </summary>
-		public string ImgUrl
+		public DateTime? CreateTime
 		{
 			set;
 			get;
 		}
 		/// <summary>
-		/// 排序
+		/// 是否分解：0 否，1 是
 		/// </summary>
-		public int? Sort
+		public int? IsResolve
 		{
 			set;
 			get;
 		}
 		/// <summary>
-		/// 显示城市，默认全国 0
+		/// 分解时间
 		/// </summary>
-		public int? CityId
-		{
-			set;
-			get;
-		}
-		/// <summary>
-		/// 状态：1 有效，0 无效
-		/// </summary>
-		public int? Status
-		{
-			set;
-			get;
-		}
-		/// <summary>
-		/// 跳转地址
-		/// </summary>
-		public string RedirectUrl
+		public DateTime? ResolveTime
 		{
 			set;
 			get;

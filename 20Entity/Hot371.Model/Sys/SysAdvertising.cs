@@ -1,8 +1,8 @@
 ﻿/**  版本信息模板在安装目录下，可自行修改。
-* PCheck.cs
+* SysAdvertising.cs
 *
 * 功 能： N/A
-* 类 名： PCheck
+* 类 名： SysAdvertising
 *
 * Ver    变更日期             负责人  变更内容
 * ───────────────────────────────────
@@ -11,71 +11,71 @@
 * Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
 *┌──────────────────────────────────┐
 *│　此技术信息为本公司机密信息，未经本公司书面同意禁止向第三方披露．　│
-*│　版权所有：动软卓越（北京）科技有限公司　　　　　　　　　　　　　　│
+*│　版权所有：三缺一　　　　　　　　　　　　　　│
 *└──────────────────────────────────┘
 */
 using System;
 namespace Hot371.Model
 {
 	/// <summary>
-	/// PCheck:实体类(属性说明自动提取数据库字段的描述信息)
+	/// SysAdvertising:实体类(属性说明自动提取数据库字段的描述信息)
 	/// </summary>
 	[Serializable]
-	public partial class PCheck
+	public partial class SysAdvertising
 	{
 		#region Model
 		/// <summary>
 		/// PK 自增
 		/// </summary>
-		public int CId
+		public int AId
 		{
 			set;
 			get;
 		}
 		/// <summary>
-		/// 职位
+		/// 标题
 		/// </summary>
-		public int? PId
+		public string Title
 		{
 			set;
 			get;
 		}
 		/// <summary>
-		/// 申请时间
+		/// 图片
 		/// </summary>
-		public DateTime? AppTime
+		public string ImgUrl
 		{
 			set;
 			get;
 		}
 		/// <summary>
-		/// 审批结果：0 待审，10 通过，20 未通过
+		/// 排序
 		/// </summary>
-		public int? CheckResult
+		public int? Sort
 		{
 			set;
 			get;
 		}
 		/// <summary>
-		/// 审批时间
+		/// 显示城市，默认全国 0
 		/// </summary>
-		public DateTime? CheckTime
+		public int? CityId
 		{
 			set;
 			get;
 		}
 		/// <summary>
-		/// 审批备注
+		/// 状态：1 有效，0 无效
 		/// </summary>
-		public string CheckRemark
+		public int? Status
 		{
 			set;
 			get;
 		}
 		/// <summary>
-		/// 审批人
+		/// 跳转地址
 		/// </summary>
-		public int? CheckUserId
+		public string RedirectUrl
 		{
 			set;
 			get;

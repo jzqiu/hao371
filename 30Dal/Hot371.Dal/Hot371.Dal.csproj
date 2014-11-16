@@ -45,7 +45,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBGlobal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sys\SysAreaRespository.cs" />
+    <Compile Include="Sys\SysParametersRespository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\20Entity\Hot371.Model\Hot371.Model.csproj">
+      <Project>{ad12e3b8-b49a-49e2-9fc2-bad5e708aa43}</Project>
+      <Name>Hot371.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

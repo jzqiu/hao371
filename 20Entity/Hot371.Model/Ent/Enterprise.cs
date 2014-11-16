@@ -1,24 +1,12 @@
-﻿/**  版本信息模板在安装目录下，可自行修改。
-* Enterprise.cs
-*
-* 功 能： N/A
-* 类 名： Enterprise
-*
-* Ver    变更日期             负责人  变更内容
-* ───────────────────────────────────
-* V0.01  2014/11/15 23:11:32   N/A    初版
-*
-* Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
-*┌──────────────────────────────────┐
-*│　此技术信息为本公司机密信息，未经本公司书面同意禁止向第三方披露．　│
-*│　版权所有：动软卓越（北京）科技有限公司　　　　　　　　　　　　　　│
-*└──────────────────────────────────┘
-*/
-using System;
+﻿using System;
+using System.Data;
+using System.Data.SqlClient;
+using System.Text;
+
 namespace Hot371.Model
 {
 	/// <summary>
-	/// Enterprise:实体类(属性说明自动提取数据库字段的描述信息)
+	/// 类Enterprise。
 	/// </summary>
 	[Serializable]
 	public partial class Enterprise
@@ -153,9 +141,25 @@ namespace Hot371.Model
 			get;
 		}
 		/// <summary>
-		/// 挂靠父企业
+		/// 挂靠父中介，直招企业默认0
 		/// </summary>
 		public int? ParentId
+		{
+			set;
+			get;
+		}
+		/// <summary>
+		/// 中介可上线企业数
+		/// </summary>
+		public int? ENumbers
+		{
+			set;
+			get;
+		}
+		/// <summary>
+		/// 中介发布的企业是否上线，默认 0； 直招企业 默认 1
+		/// </summary>
+		public int? IsOnline
 		{
 			set;
 			get;
