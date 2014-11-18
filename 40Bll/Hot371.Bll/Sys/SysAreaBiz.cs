@@ -16,7 +16,14 @@ namespace Hot371.Bll.Sys
         /// <summary>
         /// 缓存key
         /// </summary>
-        private static readonly string cacheKey = "Hot371.AllArea";
+        private const string CacheKey = "Hot371.AllArea";
+
+        private readonly SysAreaRespository _respository;
+
+        public SysAreaBiz()
+        {
+            this._respository = new SysAreaRespository();
+        }
 
         /// <summary>
         /// 获取全部放缓存 1小时
@@ -24,17 +31,16 @@ namespace Hot371.Bll.Sys
         /// <returns></returns>
         private IEnumerable<SysArea> GetAll()
         {
-            var cache = Caching.Get(cacheKey) as IEnumerable<SysArea>;
+            var cache = Caching.Get(CacheKey) as IEnumerable<SysArea>;
             if (cache != null)
             {
                 return cache;
             }
 
-            var resp = new SysAreaRespository();
-            var all = resp.GetAll();
+            var all = _respository.GetAll();
             try
             {
-                Caching.Set(cacheKey, all, 60);
+                Caching.Set(CacheKey, all, 60);
             }
             catch (Exception)
             {

@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00Doc", "00Doc", "{F96CE490-8B9C-478C-854E-50C32DA2761F}"
 	ProjectSection(SolutionItems) = preProject
 		00Doc\Hot371.htm = 00Doc\Hot371.htm
@@ -11,6 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00Sql", "00Sql", "{BCFDF745
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00Dll", "00Dll", "{1CA85DD2-AD75-42F7-979C-EDE5CFB5C88F}"
 	ProjectSection(SolutionItems) = preProject
+		00Dll\TCBase.Component.QRCode.dll = 00Dll\TCBase.Component.QRCode.dll
 		00Dll\TCBase.Saker.Core.dll = 00Dll\TCBase.Saker.Core.dll
 		00Dll\TCSmartFramework.DataAccess.dll = 00Dll\TCSmartFramework.DataAccess.dll
 	EndProjectSection

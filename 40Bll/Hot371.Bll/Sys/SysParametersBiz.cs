@@ -16,7 +16,14 @@ namespace Hot371.Bll.Sys
         /// <summary>
         /// 缓存key
         /// </summary>
-        private static readonly string cacheKey = "Hot371.AllParameters";
+        private const string CacheKey = "Hot371.AllParameters";
+
+        private readonly SysParametersRespository _respository;
+
+        public SysParametersBiz()
+        {
+            this._respository=new SysParametersRespository();
+        }
 
         /// <summary>
         /// 获取全部放缓存 1小时
@@ -24,17 +31,16 @@ namespace Hot371.Bll.Sys
         /// <returns></returns>
         public IEnumerable<SysParameters> GetAll()
         {
-            var cache = Caching.Get(cacheKey) as IEnumerable<SysParameters>;
+            var cache = Caching.Get(CacheKey) as IEnumerable<SysParameters>;
             if (cache != null)
             {
                 return cache;
             }
 
-            var resp = new SysParametersRespository();
-            var all = resp.GetAll();
+            var all = _respository.GetAll();
             try
             {
-                Caching.Set(cacheKey, all, 60);
+                Caching.Set(CacheKey, all, 60);
             }
             catch (Exception)
             {

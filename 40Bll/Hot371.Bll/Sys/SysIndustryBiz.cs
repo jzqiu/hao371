@@ -13,7 +13,14 @@ namespace Hot371.Bll.Sys
         /// <summary>
         /// 缓存key
         /// </summary>
-        private static readonly string cacheKey = "Hot371.AllIndustry";
+        private const string CacheKey = "Hot371.AllIndustry";
+
+        private readonly SysIndustryRespository _respository;
+
+        public SysIndustryBiz()
+        {
+            this._respository=new SysIndustryRespository();
+        }
 
         /// <summary>
         /// 获取全部放缓存 1小时
@@ -21,17 +28,16 @@ namespace Hot371.Bll.Sys
         /// <returns></returns>
         public IEnumerable<SysIndustry> GetAll()
         {
-            var cache = Caching.Get(cacheKey) as IEnumerable<SysIndustry>;
+            var cache = Caching.Get(CacheKey) as IEnumerable<SysIndustry>;
             if (cache != null)
             {
                 return cache;
             }
 
-            var resp = new SysIndustryRespository();
-            var all = resp.GetAll();
+            var all = _respository.GetAll();
             try
             {
-                Caching.Set(cacheKey, all, 60);
+                Caching.Set(CacheKey, all, 60);
             }
             catch (Exception)
             {
